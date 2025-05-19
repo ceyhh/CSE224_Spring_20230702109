@@ -1,0 +1,106 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO counter
+  CLASS BLOCK ;
+  FOREIGN counter ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 34.500 BY 57.120 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 13.020 10.640 14.620 46.480 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 9.720 10.640 11.320 46.480 ;
+    END
+  END VPWR
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met2 ;
+        RECT 17.110 0.000 17.390 4.000 ;
+    END
+  END clk
+  PIN count[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 30.500 47.640 34.500 48.240 ;
+    END
+  END count[0]
+  PIN count[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 30.500 34.040 34.500 34.640 ;
+    END
+  END count[1]
+  PIN count[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 30.500 20.440 34.500 21.040 ;
+    END
+  END count[2]
+  PIN count[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 30.500 6.840 34.500 7.440 ;
+    END
+  END count[3]
+  PIN rst
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 17.110 53.120 17.390 57.120 ;
+    END
+  END rst
+  OBS
+      LAYER nwell ;
+        RECT 5.330 10.795 29.170 46.430 ;
+      LAYER li1 ;
+        RECT 5.520 10.795 28.980 46.325 ;
+      LAYER met1 ;
+        RECT 5.520 10.640 28.980 46.480 ;
+      LAYER met2 ;
+        RECT 7.000 52.840 16.830 53.120 ;
+        RECT 17.670 52.840 27.510 53.120 ;
+        RECT 7.000 4.280 27.510 52.840 ;
+        RECT 7.000 4.000 16.830 4.280 ;
+        RECT 17.670 4.000 27.510 4.280 ;
+      LAYER met3 ;
+        RECT 9.730 47.240 30.100 48.105 ;
+        RECT 9.730 35.040 30.500 47.240 ;
+        RECT 9.730 33.640 30.100 35.040 ;
+        RECT 9.730 21.440 30.500 33.640 ;
+        RECT 9.730 20.040 30.100 21.440 ;
+        RECT 9.730 7.840 30.500 20.040 ;
+        RECT 9.730 6.975 30.100 7.840 ;
+      LAYER met4 ;
+        RECT 16.855 17.175 17.185 35.865 ;
+  END
+END counter
+END LIBRARY
+
