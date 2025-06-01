@@ -1,0 +1,100 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _21_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _18_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _21_/CLK (sky130_fd_sc_hd__dfrtp_2)
+     3    0.01    0.06    0.39    0.39 v _21_/Q (sky130_fd_sc_hd__dfrtp_2)
+                                         count[3] (net)
+                  0.06    0.00    0.39 v _09_/A (sky130_fd_sc_hd__or4b_2)
+     2    0.00    0.10    0.66    1.05 v _09_/X (sky130_fd_sc_hd__or4b_2)
+                                         _08_ (net)
+                  0.10    0.00    1.05 v _10_/B (sky130_fd_sc_hd__and2b_2)
+     1    0.00    0.03    0.21    1.26 v _10_/X (sky130_fd_sc_hd__and2b_2)
+                                         _04_ (net)
+                  0.03    0.00    1.26 v _11_/A (sky130_fd_sc_hd__buf_1)
+     1    0.00    0.02    0.08    1.33 v _11_/X (sky130_fd_sc_hd__buf_1)
+                                         _00_ (net)
+                  0.02    0.00    1.33 v _18_/D (sky130_fd_sc_hd__dfrtp_2)
+                                  1.33   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ _18_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                         -0.12    9.88   library setup time
+                                  9.88   data required time
+-----------------------------------------------------------------------------
+                                  9.88   data required time
+                                 -1.33   data arrival time
+-----------------------------------------------------------------------------
+                                  8.55   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 15 unannotated drivers.
+ clk
+ rst
+ _09_/X
+ _10_/X
+ _11_/X
+ _12_/X
+ _13_/Y
+ _14_/X
+ _15_/X
+ _16_/X
+ _17_/Y
+ _18_/Q
+ _19_/Q
+ _20_/Q
+ _21_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  rst
+Warning: There are 4 unconstrained endpoints.
+  count[0]
+  count[1]
+  count[2]
+  count[3]
