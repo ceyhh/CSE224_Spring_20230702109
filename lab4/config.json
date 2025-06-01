@@ -1,0 +1,36 @@
+{
+  "DESIGN_NAME": "TopModule",
+  "VERILOG_FILES": "dir::src/*.v",
+
+  "CLOCK_TREE_SYNTH": true,
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10,
+
+  "FP_SIZING": "relative",
+  "FP_CORE_UTIL": 25,
+
+  "PL_RANDOM_GLB_PLACEMENT": false,
+  "PL_TARGET_DENSITY": 0.55,
+
+  "FP_PDN_AUTO_ADJUST": false,
+  "FP_PDN_VPITCH": 50,
+  "FP_PDN_HPITCH": 50,
+  "FP_PDN_VOFFSET": 20,
+  "FP_PDN_HOFFSET": 20,
+
+  "GRT_REPAIR_ANTENNAS": 1,
+  "DIODE_ON_PORTS": "both",
+  "RUN_HEURISTIC_DIODE_INSERTION": true,
+  "USE_ANTENNA_CELL": true,
+  "ANTENNA_CELL": "sky130_fd_sc_hd__diode_2",
+  "ANTENNA_CELL_PIN": "DIODE",
+  "DIODE_INSERTION_STRATEGY": 4,
+
+  "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+
+  "pdk::sky130*": {
+    "FP_CORE_UTIL": 25,
+    "CLOCK_PERIOD": 10
+  }
+}
+
