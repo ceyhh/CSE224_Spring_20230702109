@@ -1,0 +1,63 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1747661417
+<< nwell >>
+rect 1066 2159 5834 9286
+<< obsli1 >>
+rect 1104 2159 5796 9265
+<< obsm1 >>
+rect 1104 2128 5796 9296
+<< metal2 >>
+rect 3422 10624 3478 11424
+rect 3422 0 3478 800
+<< obsm2 >>
+rect 1400 10568 3366 10624
+rect 3534 10568 5502 10624
+rect 1400 856 5502 10568
+rect 1400 800 3366 856
+rect 3534 800 5502 856
+<< metal3 >>
+rect 6100 9528 6900 9648
+rect 6100 6808 6900 6928
+rect 6100 4088 6900 4208
+rect 6100 1368 6900 1488
+<< obsm3 >>
+rect 1946 9448 6020 9621
+rect 1946 7008 6100 9448
+rect 1946 6728 6020 7008
+rect 1946 4288 6100 6728
+rect 1946 4008 6020 4288
+rect 1946 1568 6100 4008
+rect 1946 1395 6020 1568
+<< metal4 >>
+rect 1944 2128 2264 9296
+rect 2604 2128 2924 9296
+<< obsm4 >>
+rect 3371 3435 3437 7173
+<< labels >>
+rlabel metal4 s 2604 2128 2924 9296 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal4 s 1944 2128 2264 9296 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal2 s 3422 0 3478 800 6 clk
+port 3 nsew signal input
+rlabel metal3 s 6100 9528 6900 9648 6 count[0]
+port 4 nsew signal output
+rlabel metal3 s 6100 6808 6900 6928 6 count[1]
+port 5 nsew signal output
+rlabel metal3 s 6100 4088 6900 4208 6 count[2]
+port 6 nsew signal output
+rlabel metal3 s 6100 1368 6900 1488 6 count[3]
+port 7 nsew signal output
+rlabel metal2 s 3422 10624 3478 11424 6 rst
+port 8 nsew signal input
+<< properties >>
+string FIXED_BBOX 0 0 6900 11424
+string LEFclass BLOCK
+string LEFview TRUE
+string GDS_END 182640
+string GDS_FILE /openlane/lab3/runs/RUN_2025.05.19_13.29.44/results/signoff/counter.magic.gds
+string GDS_START 118718
+<< end >>
+
