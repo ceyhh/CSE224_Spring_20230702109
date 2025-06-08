@@ -1,0 +1,394 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: _2766_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.15    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     4    0.03    0.07    0.06    2.06 v rst (in)
+                                         rst (net)
+                  0.08    0.00    2.06 v _2526_/A (sky130_fd_sc_hd__buf_1)
+     7    0.03    0.19    0.24    2.29 v _2526_/X (sky130_fd_sc_hd__buf_1)
+                                         _1260_ (net)
+                  0.19    0.00    2.29 v _2560_/A (sky130_fd_sc_hd__buf_1)
+    10    0.06    0.33    0.39    2.68 v _2560_/X (sky130_fd_sc_hd__buf_1)
+                                         _1264_ (net)
+                  0.33    0.01    2.69 v _2570_/A (sky130_fd_sc_hd__inv_2)
+     1    0.00    0.08    0.12    2.81 ^ _2570_/Y (sky130_fd_sc_hd__inv_2)
+                                         _0160_ (net)
+                  0.08    0.00    2.81 ^ _2766_/RESET_B (sky130_fd_sc_hd__dfrtp_2)
+                                  2.81   data arrival time
+
+                  0.15   10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                                  9.75 ^ _2766_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                          0.24    9.99   library recovery time
+                                  9.99   data required time
+-----------------------------------------------------------------------------
+                                  9.99   data required time
+                                 -2.81   data arrival time
+-----------------------------------------------------------------------------
+                                  7.18   slack (MET)
+
+
+Startpoint: control (input port clocked by clk)
+Endpoint: instruction_tb[14] (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.15    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 ^ input external delay
+     8    0.04    0.21    0.15    2.15 ^ control (in)
+                                         control (net)
+                  0.21    0.00    2.15 ^ _1501_/D (sky130_fd_sc_hd__and4bb_2)
+     1    0.00    0.05    0.25    2.41 ^ _1501_/X (sky130_fd_sc_hd__and4bb_2)
+                                         _0475_ (net)
+                  0.05    0.00    2.41 ^ _1502_/A (sky130_fd_sc_hd__buf_1)
+     8    0.03    0.39    0.34    2.75 ^ _1502_/X (sky130_fd_sc_hd__buf_1)
+                                         _0476_ (net)
+                  0.39    0.00    2.75 ^ _1503_/A (sky130_fd_sc_hd__buf_1)
+    10    0.03    0.37    0.38    3.13 ^ _1503_/X (sky130_fd_sc_hd__buf_1)
+                                         _0477_ (net)
+                  0.37    0.00    3.13 ^ _1504_/A (sky130_fd_sc_hd__buf_1)
+    10    0.04    0.44    0.43    3.56 ^ _1504_/X (sky130_fd_sc_hd__buf_1)
+                                         _0478_ (net)
+                  0.44    0.00    3.56 ^ _1505_/A (sky130_fd_sc_hd__buf_1)
+    10    0.04    0.50    0.47    4.04 ^ _1505_/X (sky130_fd_sc_hd__buf_1)
+                                         _0479_ (net)
+                  0.50    0.00    4.04 ^ _1506_/A (sky130_fd_sc_hd__buf_1)
+    10    0.04    0.49    0.47    4.51 ^ _1506_/X (sky130_fd_sc_hd__buf_1)
+                                         _0480_ (net)
+                  0.49    0.01    4.52 ^ _1507_/A (sky130_fd_sc_hd__buf_1)
+    10    0.04    0.49    0.47    4.99 ^ _1507_/X (sky130_fd_sc_hd__buf_1)
+                                         _0481_ (net)
+                  0.49    0.00    4.99 ^ _1508_/A (sky130_fd_sc_hd__buf_1)
+    10    0.03    0.39    0.40    5.39 ^ _1508_/X (sky130_fd_sc_hd__buf_1)
+                                         _0482_ (net)
+                  0.39    0.00    5.39 ^ _1509_/A (sky130_fd_sc_hd__buf_1)
+    10    0.05    0.53    0.49    5.88 ^ _1509_/X (sky130_fd_sc_hd__buf_1)
+                                         _0483_ (net)
+                  0.53    0.00    5.88 ^ _1956_/A (sky130_fd_sc_hd__buf_1)
+    12    0.09    1.06    0.88    6.76 ^ _1956_/X (sky130_fd_sc_hd__buf_1)
+                                         instruction_tb[20] (net)
+                  1.06    0.01    6.78 ^ _2347_/A (sky130_fd_sc_hd__or2_2)
+     1    0.00    0.05    0.25    7.03 ^ _2347_/X (sky130_fd_sc_hd__or2_2)
+                                         _1179_ (net)
+                  0.05    0.00    7.03 ^ _2348_/A (sky130_fd_sc_hd__buf_1)
+     2    0.04    0.43    0.37    7.40 ^ _2348_/X (sky130_fd_sc_hd__buf_1)
+                                         instruction_tb[16] (net)
+                  0.43    0.00    7.40 ^ _2874_/A (sky130_fd_sc_hd__buf_2)
+     1    0.03    0.17    0.31    7.71 ^ _2874_/X (sky130_fd_sc_hd__buf_2)
+                                         instruction_tb[14] (net)
+                  0.17    0.00    7.71 ^ instruction_tb[14] (out)
+                                  7.71   data arrival time
+
+                  0.15   10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                         -2.00    7.75   output external delay
+                                  7.75   data required time
+-----------------------------------------------------------------------------
+                                  7.75   data required time
+                                 -7.71   data arrival time
+-----------------------------------------------------------------------------
+                                  0.04   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+instruction_tb[20]                      0.75    1.06   -0.31 (VIOLATED)
+_2875_/A                                0.75    1.06   -0.31 (VIOLATED)
+_2876_/A                                0.75    1.06   -0.31 (VIOLATED)
+_2347_/A                                0.75    1.06   -0.31 (VIOLATED)
+_2104_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2092_/S                                0.75    1.06   -0.31 (VIOLATED)
+_1956_/X                                0.75    1.06   -0.31 (VIOLATED)
+_1957_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2004_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2030_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2049_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2064_/S                                0.75    1.06   -0.31 (VIOLATED)
+_2078_/S                                0.75    1.06   -0.31 (VIOLATED)
+instruction_tb[30]                      0.75    1.03   -0.28 (VIOLATED)
+_2245_/B                                0.75    1.03   -0.28 (VIOLATED)
+_2250_/B                                0.75    1.03   -0.28 (VIOLATED)
+_2164_/A                                0.75    1.03   -0.28 (VIOLATED)
+_2202_/A                                0.75    1.03   -0.28 (VIOLATED)
+_2191_/B2                               0.75    1.03   -0.28 (VIOLATED)
+_2197_/B2                               0.75    1.03   -0.28 (VIOLATED)
+_2124_/A1                               0.75    1.03   -0.28 (VIOLATED)
+_2066_/X                                0.75    1.03   -0.28 (VIOLATED)
+_2077_/A1                               0.75    1.03   -0.28 (VIOLATED)
+_2350_/B                                0.75    1.03   -0.28 (VIOLATED)
+instruction_tb[29]                      0.75    1.01   -0.26 (VIOLATED)
+_1355_/B1                               0.75    1.01   -0.26 (VIOLATED)
+_2172_/A1                               0.75    1.01   -0.26 (VIOLATED)
+_2171_/A1                               0.75    1.01   -0.26 (VIOLATED)
+_1354_/X                                0.75    1.01   -0.26 (VIOLATED)
+_1597_/B1                               0.75    1.01   -0.26 (VIOLATED)
+_1604_/B1                               0.75    1.01   -0.26 (VIOLATED)
+_1828_/A1                               0.75    1.01   -0.26 (VIOLATED)
+_1858_/A                                0.75    1.01   -0.26 (VIOLATED)
+_1859_/A1                               0.75    1.01   -0.26 (VIOLATED)
+_1869_/B1                               0.75    1.01   -0.26 (VIOLATED)
+instruction_tb[23]                      0.75    0.98   -0.23 (VIOLATED)
+_2877_/A                                0.75    0.98   -0.23 (VIOLATED)
+_1500_/X                                0.75    0.98   -0.23 (VIOLATED)
+_1510_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1601_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1748_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1819_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1826_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1832_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1841_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1854_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1864_/A2                               0.75    0.98   -0.23 (VIOLATED)
+_1997_/A1                               0.75    0.92   -0.17 (VIOLATED)
+_2017_/S                                0.75    0.92   -0.17 (VIOLATED)
+_2040_/S                                0.75    0.92   -0.17 (VIOLATED)
+rd2_tb[1]                               0.75    0.92   -0.17 (VIOLATED)
+_1964_/A1                               0.75    0.92   -0.17 (VIOLATED)
+_1968_/A1                               0.75    0.92   -0.17 (VIOLATED)
+_1974_/A1                               0.75    0.92   -0.17 (VIOLATED)
+_2014_/A                                0.75    0.92   -0.17 (VIOLATED)
+_1976_/B2                               0.75    0.92   -0.17 (VIOLATED)
+_2100_/B                                0.75    0.92   -0.17 (VIOLATED)
+_1960_/X                                0.75    0.92   -0.17 (VIOLATED)
+rd2_tb[3]                               0.75    0.91   -0.16 (VIOLATED)
+_2085_/A                                0.75    0.91   -0.16 (VIOLATED)
+_2086_/A1                               0.75    0.91   -0.16 (VIOLATED)
+_2101_/S                                0.75    0.91   -0.16 (VIOLATED)
+_2149_/A                                0.75    0.91   -0.16 (VIOLATED)
+_2121_/A                                0.75    0.91   -0.16 (VIOLATED)
+_1920_/X                                0.75    0.91   -0.16 (VIOLATED)
+_1953_/A1                               0.75    0.91   -0.16 (VIOLATED)
+_1978_/S                                0.75    0.91   -0.16 (VIOLATED)
+_1999_/A1_N                             0.75    0.91   -0.16 (VIOLATED)
+_2096_/S                                0.75    0.91   -0.16 (VIOLATED)
+rd2_tb[0]                               0.75    0.90   -0.15 (VIOLATED)
+_2100_/C                                0.75    0.90   -0.15 (VIOLATED)
+_2265_/A                                0.75    0.90   -0.15 (VIOLATED)
+_1975_/S                                0.75    0.90   -0.15 (VIOLATED)
+_1961_/S                                0.75    0.90   -0.15 (VIOLATED)
+_1927_/S                                0.75    0.90   -0.15 (VIOLATED)
+_1941_/S                                0.75    0.90   -0.15 (VIOLATED)
+_1994_/S                                0.75    0.90   -0.15 (VIOLATED)
+_2022_/S                                0.75    0.90   -0.15 (VIOLATED)
+_1995_/B                                0.75    0.90   -0.15 (VIOLATED)
+_1926_/X                                0.75    0.90   -0.15 (VIOLATED)
+rd1_tb[27]                              0.75    0.86   -0.11 (VIOLATED)
+_1994_/A1                               0.75    0.86   -0.11 (VIOLATED)
+_1943_/A                                0.75    0.86   -0.11 (VIOLATED)
+_1820_/X                                0.75    0.86   -0.11 (VIOLATED)
+_1823_/A                                0.75    0.86   -0.11 (VIOLATED)
+_1850_/A1                               0.75    0.86   -0.11 (VIOLATED)
+_1851_/A                                0.75    0.86   -0.11 (VIOLATED)
+rd1_tb[22]                              0.75    0.85   -0.10 (VIOLATED)
+_1981_/A0                               0.75    0.85   -0.10 (VIOLATED)
+_1925_/A                                0.75    0.85   -0.10 (VIOLATED)
+_1799_/X                                0.75    0.85   -0.10 (VIOLATED)
+_1802_/A                                0.75    0.85   -0.10 (VIOLATED)
+_1813_/A                                0.75    0.85   -0.10 (VIOLATED)
+rd2_tb[2]                               0.75    0.84   -0.09 (VIOLATED)
+_2061_/A1                               0.75    0.84   -0.09 (VIOLATED)
+_1937_/S                                0.75    0.84   -0.09 (VIOLATED)
+_1936_/X                                0.75    0.84   -0.09 (VIOLATED)
+_2019_/S                                0.75    0.84   -0.09 (VIOLATED)
+_2027_/A1                               0.75    0.84   -0.09 (VIOLATED)
+_2042_/S                                0.75    0.84   -0.09 (VIOLATED)
+_2046_/A1                               0.75    0.84   -0.09 (VIOLATED)
+_2074_/A1                               0.75    0.84   -0.09 (VIOLATED)
+_2088_/A1                               0.75    0.84   -0.09 (VIOLATED)
+_2094_/S                                0.75    0.84   -0.09 (VIOLATED)
+rd1_tb[19]                              0.75    0.80   -0.05 (VIOLATED)
+_1979_/A0                               0.75    0.80   -0.05 (VIOLATED)
+_1933_/A0                               0.75    0.80   -0.05 (VIOLATED)
+_1756_/X                                0.75    0.80   -0.05 (VIOLATED)
+_1761_/A                                0.75    0.80   -0.05 (VIOLATED)
+_1807_/A                                0.75    0.80   -0.05 (VIOLATED)
+_1809_/A                                0.75    0.80   -0.05 (VIOLATED)
+rd1_tb[25]                              0.75    0.79   -0.04 (VIOLATED)
+_1939_/A                                0.75    0.79   -0.04 (VIOLATED)
+_1833_/X                                0.75    0.79   -0.04 (VIOLATED)
+_1836_/A                                0.75    0.79   -0.04 (VIOLATED)
+_1837_/A                                0.75    0.79   -0.04 (VIOLATED)
+_1847_/A                                0.75    0.79   -0.04 (VIOLATED)
+rd1_tb[18]                              0.75    0.78   -0.03 (VIOLATED)
+_1986_/A0                               0.75    0.78   -0.03 (VIOLATED)
+_1933_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_1808_/A                                0.75    0.78   -0.03 (VIOLATED)
+_1767_/A                                0.75    0.78   -0.03 (VIOLATED)
+_1763_/X                                0.75    0.78   -0.03 (VIOLATED)
+_1873_/B1                               0.75    0.78   -0.03 (VIOLATED)
+_2063_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2091_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2146_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2131_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2137_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2224_/A1                               0.75    0.78   -0.03 (VIOLATED)
+_2234_/B                                0.75    0.78   -0.03 (VIOLATED)
+_2266_/B1                               0.75    0.78   -0.03 (VIOLATED)
+_1872_/X                                0.75    0.78   -0.03 (VIOLATED)
+_2339_/A                                0.75    0.78   -0.03 (VIOLATED)
+rd1_tb[29]                              0.75    0.77   -0.02 (VIOLATED)
+_1947_/A3                               0.75    0.77   -0.02 (VIOLATED)
+_1995_/C                                0.75    0.77   -0.02 (VIOLATED)
+_2022_/A0                               0.75    0.77   -0.02 (VIOLATED)
+_1855_/X                                0.75    0.77   -0.02 (VIOLATED)
+_1858_/B                                0.75    0.77   -0.02 (VIOLATED)
+_1859_/B1                               0.75    0.77   -0.02 (VIOLATED)
+rd1_tb[24]                              0.75    0.77   -0.02 (VIOLATED)
+_1843_/B1                               0.75    0.77   -0.02 (VIOLATED)
+_1844_/B                                0.75    0.77   -0.02 (VIOLATED)
+_1842_/X                                0.75    0.77   -0.02 (VIOLATED)
+_1940_/A                                0.75    0.77   -0.02 (VIOLATED)
+rd1_tb[26]                              0.75    0.76   -0.01 (VIOLATED)
+_1828_/B1                               0.75    0.76   -0.01 (VIOLATED)
+_1829_/B                                0.75    0.76   -0.01 (VIOLATED)
+_1827_/X                                0.75    0.76   -0.01 (VIOLATED)
+_1942_/A                                0.75    0.76   -0.01 (VIOLATED)
+rd1_tb[11]                              0.75    0.76   -0.01 (VIOLATED)
+_2171_/B1                               0.75    0.76   -0.01 (VIOLATED)
+_1711_/B                                0.75    0.76   -0.01 (VIOLATED)
+_1712_/B1                               0.75    0.76   -0.01 (VIOLATED)
+_1894_/A                                0.75    0.76   -0.01 (VIOLATED)
+_1706_/X                                0.75    0.76   -0.01 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+_1956_/X                                 10     11        (VIOLATED)
+
+
+max slew violations count Typical: 157
+max fanout violations count Typical: 1
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 39 unannotated drivers.
+ clk
+ _2832_/HI
+ _2833_/HI
+ _2834_/HI
+ _2835_/HI
+ _2836_/HI
+ _2837_/HI
+ _2838_/HI
+ _2839_/HI
+ _2840_/HI
+ _2841_/HI
+ _2842_/HI
+ _2843_/HI
+ _2844_/HI
+ _2845_/HI
+ _2846_/HI
+ _2847_/HI
+ _2848_/HI
+ _2849_/HI
+ _2850_/HI
+ _2851_/HI
+ _2852_/HI
+ _2853_/HI
+ _2854_/HI
+ _2855_/HI
+ _2856_/HI
+ _2857_/HI
+ _2858_/HI
+ _2859_/HI
+ _2860_/HI
+ _2861_/HI
+ _2862_/HI
+ _2863_/HI
+ _2864_/HI
+ _2865_/HI
+ _2866_/HI
+ _2867_/HI
+ _2868_/HI
+ _2869_/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 157
+max fanout violation count 1
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 40 unconstrained endpoints.
+  immediate_tb[10]
+  immediate_tb[11]
+  immediate_tb[12]
+  immediate_tb[13]
+  immediate_tb[14]
+  immediate_tb[15]
+  immediate_tb[16]
+  immediate_tb[17]
+  immediate_tb[18]
+  immediate_tb[19]
+  immediate_tb[20]
+  immediate_tb[21]
+  immediate_tb[22]
+  immediate_tb[23]
+  immediate_tb[24]
+  immediate_tb[25]
+  immediate_tb[26]
+  immediate_tb[27]
+  immediate_tb[28]
+  immediate_tb[29]
+  immediate_tb[30]
+  immediate_tb[31]
+  immediate_tb[4]
+  immediate_tb[5]
+  immediate_tb[6]
+  immediate_tb[7]
+  immediate_tb[8]
+  immediate_tb[9]
+  instruction_tb[10]
+  instruction_tb[11]
+  instruction_tb[12]
+  instruction_tb[13]
+  instruction_tb[18]
+  instruction_tb[21]
+  instruction_tb[4]
+  instruction_tb[5]
+  instruction_tb[6]
+  instruction_tb[7]
+  instruction_tb[8]
+  instruction_tb[9]

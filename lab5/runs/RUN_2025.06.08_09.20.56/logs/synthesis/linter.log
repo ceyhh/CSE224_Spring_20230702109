@@ -1,0 +1,17 @@
+%Warning-WIDTHTRUNC: /openlane/semi_cpu_top/src/seven_segment_display_controller.v:41:33: Value too large for 2 bit number: 4
+   41 |             if (digit_select == 2'd4) begin
+      |                                 ^~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.018
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /openlane/semi_cpu_top/src/semi_cpu_top.v:100:16: Signal is not driven, nor used: 'digit_select'
+                                                                       : ... note: In instance 'semi_cpu_top'
+  100 |     wire [3:0] digit_select;
+      |                ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/semi_cpu_top/src/semi_cpu_top.v:101:16: Signal is not driven, nor used: 'segment_output'
+                                                                       : ... note: In instance 'semi_cpu_top'
+  101 |     wire [6:0] segment_output;
+      |                ^~~~~~~~~~~~~~
+%Warning-BLKSEQ: /openlane/semi_cpu_top/src/seven_segment_display_controller.v:50:26: Blocking assignment '=' in sequential logic process
+                                                                                    : ... Suggest using delayed assignment '<='
+   50 |             2'd3: an_out = 4'b1110;  
+      |                          ^
