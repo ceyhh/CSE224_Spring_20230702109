@@ -1,0 +1,74 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 17 unannotated drivers.
+ clk
+ control
+ reset_btn
+ _00_/LO
+ _01_/LO
+ _02_/HI
+ _03_/HI
+ _04_/HI
+ _05_/HI
+ _06_/HI
+ _07_/HI
+ _08_/HI
+ _09_/HI
+ _10_/HI
+ _11_/HI
+ _12_/HI
+ _13_/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 14 unconstrained endpoints.
+  seg_high[0]
+  seg_high[1]
+  seg_high[2]
+  seg_high[3]
+  seg_high[4]
+  seg_high[5]
+  seg_high[6]
+  seg_low[0]
+  seg_low[1]
+  seg_low[2]
+  seg_low[3]
+  seg_low[4]
+  seg_low[5]
+  seg_low[6]

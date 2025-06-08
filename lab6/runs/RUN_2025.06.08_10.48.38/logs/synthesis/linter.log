@@ -1,0 +1,8 @@
+%Warning-VARHIDDEN: /openlane/full_cpu/src/RegisterFile.v:11:16: Declaration of signal hides declaration in upper scope: 'rf'
+   11 |     reg [31:0] rf [0:31];
+      |                ^~
+                    /openlane/full_cpu/src/full_cpu.v:45:18: ... Location of original declaration
+   45 |     RegisterFile rf(
+      |                  ^~
+                    ... For warning description see https://verilator.org/warn/VARHIDDEN?v=5.018
+                    ... Use "/* verilator lint_off VARHIDDEN */" and lint_on around source to disable this message.

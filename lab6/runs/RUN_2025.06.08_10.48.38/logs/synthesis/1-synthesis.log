@@ -1,0 +1,1084 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/ceyhun/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/full_cpu/src/PC.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/PC.v' to AST representation.
+Storing AST representation for module `$abstract\PC'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /openlane/full_cpu/src/SevenSeg.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/SevenSeg.v' to AST representation.
+Storing AST representation for module `$abstract\SevenSeg'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /openlane/full_cpu/src/full_cpu.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/full_cpu.v' to AST representation.
+Storing AST representation for module `$abstract\full_cpu'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /openlane/full_cpu/src/RegisterFile.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/RegisterFile.v' to AST representation.
+Storing AST representation for module `$abstract\RegisterFile'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /openlane/full_cpu/src/ALU.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/ALU.v' to AST representation.
+Storing AST representation for module `$abstract\ALU'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /openlane/full_cpu/src/InstructionDecode.v
+Parsing SystemVerilog input from `/openlane/full_cpu/src/InstructionDecode.v' to AST representation.
+Storing AST representation for module `$abstract\InstructionDecoder'.
+Successfully finished Verilog frontend.
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+
+9. Executing AST frontend in derive mode using pre-parsed AST for module `\full_cpu'.
+Generating RTLIL representation for module `\full_cpu'.
+
+9.1. Analyzing design hierarchy..
+Top module:  \full_cpu
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\SevenSeg'.
+Generating RTLIL representation for module `\SevenSeg'.
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\ALU'.
+Generating RTLIL representation for module `\ALU'.
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\RegisterFile'.
+Generating RTLIL representation for module `\RegisterFile'.
+
+9.5. Executing AST frontend in derive mode using pre-parsed AST for module `\InstructionDecoder'.
+Generating RTLIL representation for module `\InstructionDecoder'.
+
+9.6. Executing AST frontend in derive mode using pre-parsed AST for module `\PC'.
+Generating RTLIL representation for module `\PC'.
+
+9.7. Analyzing design hierarchy..
+Top module:  \full_cpu
+Used module:     \SevenSeg
+Used module:     \ALU
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \PC
+
+9.8. Analyzing design hierarchy..
+Top module:  \full_cpu
+Used module:     \SevenSeg
+Used module:     \ALU
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \PC
+Removing unused module `$abstract\InstructionDecoder'.
+Removing unused module `$abstract\ALU'.
+Removing unused module `$abstract\RegisterFile'.
+Removing unused module `$abstract\full_cpu'.
+Removing unused module `$abstract\SevenSeg'.
+Removing unused module `$abstract\PC'.
+Removed 6 unused modules.
+
+10. Generating Graphviz representation of design.
+Writing dot description to `/openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/tmp/synthesis/hierarchy.dot'.
+Dumping module full_cpu to page 1.
+Renaming module full_cpu to full_cpu.
+
+11. Executing TRIBUF pass.
+
+12. Executing HIERARCHY pass (managing design hierarchy).
+
+12.1. Analyzing design hierarchy..
+Top module:  \full_cpu
+Used module:     \SevenSeg
+Used module:     \ALU
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \PC
+
+12.2. Analyzing design hierarchy..
+Top module:  \full_cpu
+Used module:     \SevenSeg
+Used module:     \ALU
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \PC
+Removed 0 unused modules.
+
+13. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+14. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/full_cpu/src/InstructionDecode.v:26$227 in module InstructionDecoder.
+Marked 1 switch rules as full_case in process $proc$/openlane/full_cpu/src/RegisterFile.v:24$153 in module RegisterFile.
+Marked 1 switch rules as full_case in process $proc$/openlane/full_cpu/src/ALU.v:7$109 in module ALU.
+Removed 1 dead cases from process $proc$/openlane/full_cpu/src/SevenSeg.v:5$108 in module SevenSeg.
+Marked 1 switch rules as full_case in process $proc$/openlane/full_cpu/src/SevenSeg.v:5$108 in module SevenSeg.
+Marked 3 switch rules as full_case in process $proc$/openlane/full_cpu/src/PC.v:12$228 in module PC.
+Removed a total of 1 dead cases.
+
+15. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 83 assignments to connections.
+
+16. Executing PROC_INIT pass (extract init attributes).
+
+17. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\PC.$proc$/openlane/full_cpu/src/PC.v:12$228'.
+
+18. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~6 debug messages>
+
+19. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+Creating decoders for process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+     1/6: $1\we3[0:0]
+     2/6: $1\use_imm[0:0]
+     3/6: $1\alu_opcode[1:0]
+     4/6: $1\branch_eq[0:0]
+     5/6: $1\is_jump[0:0]
+     6/6: $1\is_branch[0:0]
+Creating decoders for process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+Creating decoders for process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+     1/3: $1$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$161
+     2/3: $1$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_DATA[31:0]$160
+     3/3: $1$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_ADDR[4:0]$159
+Creating decoders for process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:19$146'.
+Creating decoders for process `\ALU.$proc$/openlane/full_cpu/src/ALU.v:7$109'.
+     1/1: $1\result[31:0]
+Creating decoders for process `\SevenSeg.$proc$/openlane/full_cpu/src/SevenSeg.v:5$108'.
+     1/1: $1\seg[6:0]
+Creating decoders for process `\PC.$proc$/openlane/full_cpu/src/PC.v:12$228'.
+     1/1: $0\pc[31:0]
+
+20. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\full_cpu.$unnamed_block$2.i' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$4_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$5_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$6_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$7_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$8_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$9_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$10_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$11_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$12_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$13_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$14_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$15_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$16_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$17_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$18_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$19_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$20_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$21_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$22_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$23_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$24_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$25_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$26_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$27_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$28_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$29_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$30_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$31_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$32_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$33_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$34_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\full_cpu.$memwr$\imem$/openlane/full_cpu/src/full_cpu.v:31$35_EN' from process `\full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+No latch inferred for signal `\InstructionDecoder.\rs1' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\rs2' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\rd' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\imm_ext' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\alu_opcode' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\use_imm' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\we3' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\is_branch' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\is_jump' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\InstructionDecoder.\branch_eq' from process `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+No latch inferred for signal `\RegisterFile.\i' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$113_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$114_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$115_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$116_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$117_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$118_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$119_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$120_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$121_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$122_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$123_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$124_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$125_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$126_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$127_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$128_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$129_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$130_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$131_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$132_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$133_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$134_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$135_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$136_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$137_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$138_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$139_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$140_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$141_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$142_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$143_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:16$144_EN' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+No latch inferred for signal `\RegisterFile.\RD1' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:19$146'.
+No latch inferred for signal `\RegisterFile.\RD2' from process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:19$146'.
+No latch inferred for signal `\ALU.\result' from process `\ALU.$proc$/openlane/full_cpu/src/ALU.v:7$109'.
+No latch inferred for signal `\SevenSeg.\seg' from process `\SevenSeg.$proc$/openlane/full_cpu/src/SevenSeg.v:5$108'.
+
+21. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_ADDR' using process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_DATA' using process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\RegisterFile.$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN' using process `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\PC.\pc' using process `\PC.$proc$/openlane/full_cpu/src/PC.v:12$228'.
+  created $adff cell `$procdff$293' with positive edge clock and positive level reset.
+
+22. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+23. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `full_cpu.$proc$/openlane/full_cpu/src/full_cpu.v:0$74'.
+Found and cleaned up 1 empty switch in `\InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+Removing empty process `InstructionDecoder.$proc$/openlane/full_cpu/src/InstructionDecode.v:26$227'.
+Removing empty process `RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:0$194'.
+Found and cleaned up 1 empty switch in `\RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+Removing empty process `RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:24$153'.
+Removing empty process `RegisterFile.$proc$/openlane/full_cpu/src/RegisterFile.v:19$146'.
+Found and cleaned up 1 empty switch in `\ALU.$proc$/openlane/full_cpu/src/ALU.v:7$109'.
+Removing empty process `ALU.$proc$/openlane/full_cpu/src/ALU.v:7$109'.
+Found and cleaned up 1 empty switch in `\SevenSeg.$proc$/openlane/full_cpu/src/SevenSeg.v:5$108'.
+Removing empty process `SevenSeg.$proc$/openlane/full_cpu/src/SevenSeg.v:5$108'.
+Found and cleaned up 3 empty switches in `\PC.$proc$/openlane/full_cpu/src/PC.v:12$228'.
+Removing empty process `PC.$proc$/openlane/full_cpu/src/PC.v:12$228'.
+Cleaned up 7 empty switches.
+
+24. Executing CHECK pass (checking for obvious problems).
+Checking module full_cpu...
+Checking module InstructionDecoder...
+Checking module RegisterFile...
+Checking module ALU...
+Checking module SevenSeg...
+Checking module PC...
+Found and reported 0 problems.
+
+25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+Optimizing module InstructionDecoder.
+Optimizing module RegisterFile.
+<suppressed ~3 debug messages>
+Optimizing module ALU.
+<suppressed ~1 debug messages>
+Optimizing module SevenSeg.
+Optimizing module PC.
+
+26. Executing FLATTEN pass (flatten design).
+Deleting now unused module InstructionDecoder.
+Deleting now unused module RegisterFile.
+Deleting now unused module ALU.
+Deleting now unused module SevenSeg.
+Deleting now unused module PC.
+<suppressed ~6 debug messages>
+
+27. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 3 unused cells and 186 unused wires.
+<suppressed ~4 debug messages>
+
+29. Executing OPT pass (performing simple optimizations).
+
+29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+    New ctrl vector for $pmux cell $flatten\dec.$procmux$238: $auto$opt_reduce.cc:134:opt_pmux$296
+    New ctrl vector for $pmux cell $flatten\dec.$procmux$246: $auto$opt_reduce.cc:134:opt_pmux$298
+    Consolidated identical input bits for $mux cell $flatten\rf.$procmux$268:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156
+      New ports: A=1'0, B=1'1, Y=$flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0]
+      New connections: $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [31:1] = { $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] $flatten\rf.$0$memwr$\rf$/openlane/full_cpu/src/RegisterFile.v:26$145_EN[31:0]$156 [0] }
+  Optimizing cells in module \full_cpu.
+Performed a total of 3 changes.
+
+29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+29.16. Finished OPT passes. (There is nothing left to do.)
+
+30. Executing FSM pass (extract and optimize FSM).
+
+30.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+30.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+30.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+30.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+30.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+30.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+30.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+30.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+31. Executing OPT pass (performing simple optimizations).
+
+31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+31.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+31.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+31.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\pc0.$procdff$293 ($adff) from module full_cpu (D = $flatten\pc0.$procmux$286_Y [27:0], Q = \pc0.pc [27:0]).
+Adding EN signal on $flatten\pc0.$procdff$293 ($adff) from module full_cpu (D = $flatten\pc0.$procmux$283_Y [31:28], Q = \pc0.pc [31:28]).
+
+31.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+31.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+31.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+31.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+31.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+31.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+31.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+31.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+31.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+31.16. Finished OPT passes. (There is nothing left to do.)
+
+32. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 address bits (of 32) from memory init port full_cpu.$flatten\high.$auto$mem.cc:328:emit$234 ($flatten\high.$auto$proc_rom.cc:150:do_switch$232).
+Removed top 28 address bits (of 32) from memory init port full_cpu.$flatten\low.$auto$mem.cc:328:emit$234 ($flatten\low.$auto$proc_rom.cc:150:do_switch$232).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$162 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$163 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$164 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$165 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$166 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$167 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$168 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$169 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$170 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$171 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$172 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$173 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$174 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$175 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$176 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$177 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$178 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$179 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$180 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$181 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$182 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$183 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$184 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$185 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$186 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$187 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$188 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$189 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$190 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$191 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$192 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$flatten\rf.$meminit$\rf$/openlane/full_cpu/src/RegisterFile.v:16$193 (rf.rf).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$42 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$43 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$44 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$45 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$46 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$47 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$48 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$49 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$50 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$51 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$52 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$53 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$54 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$55 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$56 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$57 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$58 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$59 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$60 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$61 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$62 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$63 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$64 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$65 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$66 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$67 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$68 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$69 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$70 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$71 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$72 (imem).
+Removed top 27 address bits (of 32) from memory init port full_cpu.$meminit$\imem$/openlane/full_cpu/src/full_cpu.v:31$73 (imem).
+Removed top 4 bits (of 32) from mux cell full_cpu.$flatten\pc0.$procmux$286 ($mux).
+Removed top 31 bits (of 32) from port B of cell full_cpu.$flatten\pc0.$add$/openlane/full_cpu/src/PC.v:21$230 ($add).
+Removed top 3 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$262_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$259_CMP0 ($eq).
+Removed top 5 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$242_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$241_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$240_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell full_cpu.$flatten\dec.$procmux$239_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell full_cpu.$flatten\alu0.$procmux$279_CMP0 ($eq).
+Removed top 4 bits (of 32) from wire full_cpu.$flatten\pc0.$procmux$286_Y.
+
+33. Executing PEEPOPT pass (run peephole optimizers).
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+35. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module full_cpu:
+  creating $macc model for $add$/openlane/full_cpu/src/full_cpu.v:58$41 ($add).
+  creating $macc model for $flatten\alu0.$add$/openlane/full_cpu/src/ALU.v:9$110 ($add).
+  creating $macc model for $flatten\alu0.$sub$/openlane/full_cpu/src/ALU.v:10$111 ($sub).
+  creating $macc model for $flatten\pc0.$add$/openlane/full_cpu/src/PC.v:21$230 ($add).
+  creating $alu model for $macc $flatten\pc0.$add$/openlane/full_cpu/src/PC.v:21$230.
+  creating $alu model for $macc $flatten\alu0.$sub$/openlane/full_cpu/src/ALU.v:10$111.
+  creating $alu model for $macc $flatten\alu0.$add$/openlane/full_cpu/src/ALU.v:9$110.
+  creating $alu model for $macc $add$/openlane/full_cpu/src/full_cpu.v:58$41.
+  creating $alu cell for $add$/openlane/full_cpu/src/full_cpu.v:58$41: $auto$alumacc.cc:485:replace_alu$306
+  creating $alu cell for $flatten\alu0.$add$/openlane/full_cpu/src/ALU.v:9$110: $auto$alumacc.cc:485:replace_alu$309
+  creating $alu cell for $flatten\alu0.$sub$/openlane/full_cpu/src/ALU.v:10$111: $auto$alumacc.cc:485:replace_alu$312
+  creating $alu cell for $flatten\pc0.$add$/openlane/full_cpu/src/PC.v:21$230: $auto$alumacc.cc:485:replace_alu$315
+  created 4 $alu and 0 $macc cells.
+
+36. Executing SHARE pass (SAT-based resource sharing).
+Found 3 cells in module full_cpu that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:21$151 ($memrd):
+    Found 1 activation_patterns using ctrl signal $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:21$150_Y.
+    Found 1 candidates: $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:20$148
+    Analyzing resource sharing with $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:20$148 ($memrd):
+      Found 1 activation_patterns using ctrl signal $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:20$147_Y.
+      Forbidden control signals for this pair of cells: $flatten\pc0.$logic_and$/openlane/full_cpu/src/PC.v:18$229_Y
+      Activation pattern for cell $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:21$151: $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:21$150_Y = 1'1
+      Activation pattern for cell $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:20$148: $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:20$147_Y = 1'1
+      Size of SAT problem: 0 cells, 27 variables, 51 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:20$147_Y $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:21$150_Y } = 2'11
+  Analyzing resource sharing options for $flatten\rf.$memrd$\rf$/openlane/full_cpu/src/RegisterFile.v:20$148 ($memrd):
+    Found 1 activation_patterns using ctrl signal $flatten\rf.$ne$/openlane/full_cpu/src/RegisterFile.v:20$147_Y.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\alu0.$shl$/openlane/full_cpu/src/ALU.v:11$112 ($shl):
+    Found 1 activation_patterns using ctrl signal $flatten\alu0.$procmux$278_CMP.
+    No candidates found.
+
+37. Executing OPT pass (performing simple optimizations).
+
+37.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+37.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+37.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+37.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+37.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+37.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+37.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+37.9. Finished OPT passes. (There is nothing left to do.)
+
+38. Executing MEMORY pass.
+
+38.1. Executing OPT_MEM pass (optimize memories).
+full_cpu.imem: removing const-0 lane 0
+full_cpu.imem: removing const-0 lane 1
+full_cpu.imem: removing const-0 lane 2
+full_cpu.imem: removing const-0 lane 3
+full_cpu.imem: removing const-0 lane 4
+full_cpu.imem: removing const-0 lane 5
+full_cpu.imem: removing const-0 lane 6
+full_cpu.imem: removing const-0 lane 7
+full_cpu.imem: removing const-0 lane 8
+full_cpu.imem: removing const-0 lane 9
+full_cpu.imem: removing const-0 lane 10
+full_cpu.imem: removing const-0 lane 11
+full_cpu.imem: removing const-0 lane 12
+full_cpu.imem: removing const-0 lane 13
+full_cpu.imem: removing const-0 lane 14
+full_cpu.imem: removing const-0 lane 15
+full_cpu.imem: removing const-0 lane 16
+full_cpu.imem: removing const-0 lane 17
+full_cpu.imem: removing const-0 lane 18
+full_cpu.imem: removing const-0 lane 19
+full_cpu.imem: removing const-0 lane 20
+full_cpu.imem: removing const-0 lane 21
+full_cpu.imem: removing const-0 lane 22
+full_cpu.imem: removing const-0 lane 23
+full_cpu.imem: removing const-0 lane 24
+full_cpu.imem: removing const-0 lane 25
+full_cpu.imem: removing const-0 lane 26
+full_cpu.imem: removing const-0 lane 27
+full_cpu.imem: removing const-0 lane 28
+full_cpu.imem: removing const-0 lane 29
+full_cpu.imem: removing const-0 lane 30
+full_cpu.imem: removing const-0 lane 31
+Performed a total of 1 transformations.
+
+38.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+38.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing full_cpu.rf.rf write port 0.
+
+38.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+38.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\low.$auto$proc_rom.cc:150:do_switch$232'[0] in module `\full_cpu': no output FF found.
+Checking read port `$flatten\high.$auto$proc_rom.cc:150:do_switch$232'[0] in module `\full_cpu': no output FF found.
+Checking read port `\rf.rf'[0] in module `\full_cpu': no output FF found.
+Checking read port `\rf.rf'[1] in module `\full_cpu': no output FF found.
+Checking read port address `$flatten\low.$auto$proc_rom.cc:150:do_switch$232'[0] in module `\full_cpu': no address FF found.
+Checking read port address `$flatten\high.$auto$proc_rom.cc:150:do_switch$232'[0] in module `\full_cpu': no address FF found.
+Checking read port address `\rf.rf'[0] in module `\full_cpu': no address FF found.
+Checking read port address `\rf.rf'[1] in module `\full_cpu': no address FF found.
+
+38.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 16 unused cells and 17 unused wires.
+<suppressed ~20 debug messages>
+
+38.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating read ports of memory full_cpu.rf.rf by address:
+  Merging ports 0, 1 (address 5'00000).
+
+38.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+38.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+38.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+39. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+40. Executing OPT pass (performing simple optimizations).
+
+40.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+<suppressed ~97 debug messages>
+
+40.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+40.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+40.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 1 unused cells and 57 unused wires.
+<suppressed ~2 debug messages>
+
+40.5. Finished fast OPT passes.
+
+41. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\high.$auto$proc_rom.cc:150:do_switch$232 in module \full_cpu:
+  created 16 $dff cells and 0 static cells of width 7.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $flatten\low.$auto$proc_rom.cc:150:do_switch$232 in module \full_cpu:
+  created 16 $dff cells and 0 static cells of width 7.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+
+42. Executing OPT pass (performing simple optimizations).
+
+42.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+<suppressed ~30 debug messages>
+
+42.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+42.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+42.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+42.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+42.6. Executing OPT_SHARE pass.
+
+42.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+42.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 60 unused wires.
+<suppressed ~1 debug messages>
+
+42.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+42.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+42.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+42.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+42.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+42.14. Executing OPT_SHARE pass.
+
+42.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+42.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+42.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+42.18. Finished OPT passes. (There is nothing left to do.)
+
+43. Executing TECHMAP pass (map to technology primitives).
+
+43.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+43.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+44. Executing OPT pass (performing simple optimizations).
+
+44.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+44.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+44.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+44.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+44.5. Finished fast OPT passes.
+
+45. Executing ABC pass (technology mapping using ABC).
+
+45.1. Extracting gate netlist of module `\full_cpu' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+46. Executing OPT pass (performing simple optimizations).
+
+46.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+46.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+46.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+46.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+46.5. Finished fast OPT passes.
+
+47. Executing HIERARCHY pass (managing design hierarchy).
+
+47.1. Analyzing design hierarchy..
+Top module:  \full_cpu
+
+47.2. Analyzing design hierarchy..
+Top module:  \full_cpu
+Removed 0 unused modules.
+
+48. Printing statistics.
+
+=== full_cpu ===
+
+   Number of wires:                 64
+   Number of wire bits:            847
+   Number of public wires:          64
+   Number of public wire bits:     847
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+49. Executing CHECK pass (checking for obvious problems).
+Checking module full_cpu...
+Found and reported 0 problems.
+
+50. Generating Graphviz representation of design.
+Writing dot description to `/openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/tmp/synthesis/post_techmap.dot'.
+Dumping module full_cpu to page 1.
+
+51. Executing SHARE pass (SAT-based resource sharing).
+
+52. Executing OPT pass (performing simple optimizations).
+
+52.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+52.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+52.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_cpu..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+52.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_cpu.
+Performed a total of 0 changes.
+
+52.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_cpu'.
+Removed a total of 0 cells.
+
+52.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+52.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+
+52.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_cpu.
+
+52.9. Finished OPT passes. (There is nothing left to do.)
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 59 unused wires.
+<suppressed ~59 debug messages>
+
+54. Printing statistics.
+
+=== full_cpu ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+mapping tbuf
+
+55. Executing TECHMAP pass (map to technology primitives).
+
+55.1. Executing Verilog-2005 frontend: /home/ceyhun/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/ceyhun/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+55.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+56. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+57. Executing TECHMAP pass (map to technology primitives).
+
+57.1. Executing Verilog-2005 frontend: /home/ceyhun/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/ceyhun/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+57.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+58. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+59. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+59.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\full_cpu':
+
+60. Printing statistics.
+
+=== full_cpu ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+[INFO]: USING STRATEGY AREA 0
+
+61. Executing ABC pass (technology mapping using ABC).
+
+61.1. Extracting gate netlist of module `\full_cpu' to `/tmp/yosys-abc-IU15bT/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+62. Executing SETUNDEF pass (replace undef values with defined constants).
+
+63. Executing HILOMAP pass (mapping to constant drivers).
+
+64. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+65. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_cpu..
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~1 debug messages>
+
+66. Executing INSBUF pass (insert buffer cells for connected wires).
+
+67. Executing CHECK pass (checking for obvious problems).
+Checking module full_cpu...
+Found and reported 0 problems.
+
+68. Printing statistics.
+
+=== full_cpu ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     sky130_fd_sc_hd__conb_1        14
+
+   Chip area for module '\full_cpu': 52.550400
+
+69. Executing Verilog backend.
+Dumping module `\full_cpu'.
+
+70. Executing JSON backend.
+
+End of script. Logfile hash: f675e42ac4, CPU: user 0.13s system 0.27s, MEM: 42.98 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 27% 2x read_liberty (0 sec), 13% 4x stat (0 sec), ...

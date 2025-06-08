@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 5951 8095
+string GDS_END 56828
+string GDS_FILE /openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/results/signoff/full_cpu.magic.gds
+string GDS_START 20958
+<< end >>

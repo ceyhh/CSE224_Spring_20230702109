@@ -1,0 +1,130 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN full_cpu ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 29755 40475 ) ;
+ROW ROW_0 unithd 5520 10880 N DO 40 BY 1 STEP 460 0 ;
+ROW ROW_1 unithd 5520 13600 FS DO 40 BY 1 STEP 460 0 ;
+ROW ROW_2 unithd 5520 16320 N DO 40 BY 1 STEP 460 0 ;
+ROW ROW_3 unithd 5520 19040 FS DO 40 BY 1 STEP 460 0 ;
+ROW ROW_4 unithd 5520 21760 N DO 40 BY 1 STEP 460 0 ;
+ROW ROW_5 unithd 5520 24480 FS DO 40 BY 1 STEP 460 0 ;
+TRACKS X 230 DO 65 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 119 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 87 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 119 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 65 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 88 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 44 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 59 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 32 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 44 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 9 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 12 STEP 3400 LAYER met5 ;
+COMPONENTS 14 ;
+    - _00_ sky130_fd_sc_hd__conb_1 ;
+    - _01_ sky130_fd_sc_hd__conb_1 ;
+    - _02_ sky130_fd_sc_hd__conb_1 ;
+    - _03_ sky130_fd_sc_hd__conb_1 ;
+    - _04_ sky130_fd_sc_hd__conb_1 ;
+    - _05_ sky130_fd_sc_hd__conb_1 ;
+    - _06_ sky130_fd_sc_hd__conb_1 ;
+    - _07_ sky130_fd_sc_hd__conb_1 ;
+    - _08_ sky130_fd_sc_hd__conb_1 ;
+    - _09_ sky130_fd_sc_hd__conb_1 ;
+    - _10_ sky130_fd_sc_hd__conb_1 ;
+    - _11_ sky130_fd_sc_hd__conb_1 ;
+    - _12_ sky130_fd_sc_hd__conb_1 ;
+    - _13_ sky130_fd_sc_hd__conb_1 ;
+END COMPONENTS
+PINS 17 ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 5780 ) N ;
+    - control + NET control + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 19380 ) N ;
+    - reset_btn + NET reset_btn + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 32980 ) N ;
+    - seg_high[0] + NET seg_high[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 2990 38475 ) N ;
+    - seg_high[1] + NET seg_high[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 4830 38475 ) N ;
+    - seg_high[2] + NET seg_high[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 6670 38475 ) N ;
+    - seg_high[3] + NET seg_high[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 8510 38475 ) N ;
+    - seg_high[4] + NET seg_high[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 10350 38475 ) N ;
+    - seg_high[5] + NET seg_high[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 12190 38475 ) N ;
+    - seg_high[6] + NET seg_high[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 14030 38475 ) N ;
+    - seg_low[0] + NET seg_low[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 15870 38475 ) N ;
+    - seg_low[1] + NET seg_low[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 17710 38475 ) N ;
+    - seg_low[2] + NET seg_low[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 19550 38475 ) N ;
+    - seg_low[3] + NET seg_low[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 21390 38475 ) N ;
+    - seg_low[4] + NET seg_low[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 23230 38475 ) N ;
+    - seg_low[5] + NET seg_low[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 25070 38475 ) N ;
+    - seg_low[6] + NET seg_low[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 26910 38475 ) N ;
+END PINS
+NETS 17 ;
+    - clk ( PIN clk ) + USE SIGNAL ;
+    - control ( PIN control ) + USE SIGNAL ;
+    - reset_btn ( PIN reset_btn ) + USE SIGNAL ;
+    - seg_high[0] ( PIN seg_high[0] ) ( _02_ LO ) + USE SIGNAL ;
+    - seg_high[1] ( PIN seg_high[1] ) ( _03_ LO ) + USE SIGNAL ;
+    - seg_high[2] ( PIN seg_high[2] ) ( _04_ LO ) + USE SIGNAL ;
+    - seg_high[3] ( PIN seg_high[3] ) ( _05_ LO ) + USE SIGNAL ;
+    - seg_high[4] ( PIN seg_high[4] ) ( _06_ LO ) + USE SIGNAL ;
+    - seg_high[5] ( PIN seg_high[5] ) ( _07_ LO ) + USE SIGNAL ;
+    - seg_high[6] ( PIN seg_high[6] ) ( _00_ HI ) + USE SIGNAL ;
+    - seg_low[0] ( PIN seg_low[0] ) ( _08_ LO ) + USE SIGNAL ;
+    - seg_low[1] ( PIN seg_low[1] ) ( _09_ LO ) + USE SIGNAL ;
+    - seg_low[2] ( PIN seg_low[2] ) ( _10_ LO ) + USE SIGNAL ;
+    - seg_low[3] ( PIN seg_low[3] ) ( _11_ LO ) + USE SIGNAL ;
+    - seg_low[4] ( PIN seg_low[4] ) ( _12_ LO ) + USE SIGNAL ;
+    - seg_low[5] ( PIN seg_low[5] ) ( _13_ LO ) + USE SIGNAL ;
+    - seg_low[6] ( PIN seg_low[6] ) ( _01_ HI ) + USE SIGNAL ;
+END NETS
+END DESIGN

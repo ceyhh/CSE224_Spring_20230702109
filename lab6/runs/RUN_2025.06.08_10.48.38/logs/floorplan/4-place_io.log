@@ -1,0 +1,34 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Top-level design name: full_cpu
+Block boundaries: 0 0 29755 40475
+Horizontal Tracks Origin: 340, Count: 59, Step: 680
+Vertical Tracks Origin: 230, Count: 65, Step: 460
+Placement details for the #N side
+Virtual pin count:  0
+Actual pin count:  14
+Total pin count:  14
+Tracks count:  65
+Tracks per pin:  4
+Used tracks count:  53
+Unused track count:  12
+Starting track index:  6
+Placement Map:
+[230, 690, 1150, 1610, 2070, 2530, [91m2990[0m, 3450, 3910, 4370, [91m4830[0m, 5290, 5750, 6210, [91m6670[0m, 7130, 7590, 8050, [91m8510[0m, 8970, 9430, 9890, [91m10350[0m, 10810, 11270, 11730, [91m12190[0m, 12650, 13110, 13570, [91m14030[0m, 14490, 14950, 15410, [91m15870[0m, 16330, 16790, 17250, [91m17710[0m, 18170, 18630, 19090, [91m19550[0m, 20010, 20470, 20930, [91m21390[0m, 21850, 22310, 22770, [91m23230[0m, 23690, 24150, 24610, [91m25070[0m, 25530, 25990, 26450, [91m26910[0m, 27370, 27830, 28290, 28750, 29210, 29670, ]
+Indices of used tracks: [6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58]
+---
+Placement details for the #W side
+Virtual pin count:  0
+Actual pin count:  3
+Total pin count:  3
+Tracks count:  30
+Tracks per pin:  10
+Used tracks count:  21
+Unused track count:  9
+Starting track index:  4
+Placement Map:
+[340, 1700, 3060, 4420, [91m5780[0m, 7140, 8500, 9860, 11220, 12580, 13940, 15300, 16660, 18020, [91m19380[0m, 20740, 22100, 23460, 24820, 26180, 27540, 28900, 30260, 31620, [91m32980[0m, 34340, 35700, 37060, 38420, 39780, ]
+Indices of used tracks: [4, 14, 24]
+---

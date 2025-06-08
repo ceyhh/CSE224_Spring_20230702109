@@ -1,0 +1,88 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 31 unannotated drivers.
+ clk
+ control
+ reset_btn
+ _00_/HI
+ _00_/LO
+ _01_/HI
+ _01_/LO
+ _02_/HI
+ _02_/LO
+ _03_/HI
+ _03_/LO
+ _04_/HI
+ _04_/LO
+ _05_/HI
+ _05_/LO
+ _06_/HI
+ _06_/LO
+ _07_/HI
+ _07_/LO
+ _08_/HI
+ _08_/LO
+ _09_/HI
+ _09_/LO
+ _10_/HI
+ _10_/LO
+ _11_/HI
+ _11_/LO
+ _12_/HI
+ _12_/LO
+ _13_/HI
+ _13_/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 14 unconstrained endpoints.
+  seg_high[0]
+  seg_high[1]
+  seg_high[2]
+  seg_high[3]
+  seg_high[4]
+  seg_high[5]
+  seg_high[6]
+  seg_low[0]
+  seg_low[1]
+  seg_low[2]
+  seg_low[3]
+  seg_low[4]
+  seg_low[5]
+  seg_low[6]

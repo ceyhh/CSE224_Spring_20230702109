@@ -1,0 +1,1 @@
+lvs {/openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/results/signoff/full_cpu.spice full_cpu} {/openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/tmp/signoff/39-full_cpu.pnl.v full_cpu} /home/ceyhun/.volare/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/full_cpu/runs/RUN_2025.06.08_10.48.38/logs/signoff/42-full_cpu.lef.lvs.log -json

@@ -1,0 +1,88 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 31 unannotated drivers.
+ clk
+ control
+ reset_btn
+ full_cpu_1/HI
+ full_cpu_1/LO
+ full_cpu_10/HI
+ full_cpu_10/LO
+ full_cpu_11/HI
+ full_cpu_11/LO
+ full_cpu_12/HI
+ full_cpu_12/LO
+ full_cpu_13/HI
+ full_cpu_13/LO
+ full_cpu_14/HI
+ full_cpu_14/LO
+ full_cpu_2/HI
+ full_cpu_2/LO
+ full_cpu_3/HI
+ full_cpu_3/LO
+ full_cpu_4/HI
+ full_cpu_4/LO
+ full_cpu_5/HI
+ full_cpu_5/LO
+ full_cpu_6/HI
+ full_cpu_6/LO
+ full_cpu_7/HI
+ full_cpu_7/LO
+ full_cpu_8/HI
+ full_cpu_8/LO
+ full_cpu_9/HI
+ full_cpu_9/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 14 unconstrained endpoints.
+  seg_high[0]
+  seg_high[1]
+  seg_high[2]
+  seg_high[3]
+  seg_high[4]
+  seg_high[5]
+  seg_high[6]
+  seg_low[0]
+  seg_low[1]
+  seg_low[2]
+  seg_low[3]
+  seg_low[4]
+  seg_low[5]
+  seg_low[6]
